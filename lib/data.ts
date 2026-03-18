@@ -5,6 +5,8 @@ export interface FamilyMember {
   name: string;
   birthYear?: string;
   deathYear?: string;
+  deathDate?: string; // Format: YYYY-MM-DD
+  lunarDeathDate?: string; // Format: DD/MM (Âm lịch)
   gender: Gender;
   title?: string;
   description?: string;
@@ -18,6 +20,8 @@ export const familyData: FamilyMember = {
   name: 'Cao Văn A',
   birthYear: '1900',
   deathYear: '1980',
+  deathDate: '1980-03-15',
+  lunarDeathDate: '29/01',
   gender: 'male',
   title: 'Thủy Tổ',
   description: 'Người khai sáng dòng họ Cao tại làng X, xã Y, huyện Z.',
@@ -26,6 +30,8 @@ export const familyData: FamilyMember = {
     name: 'Trần Thị B',
     birthYear: '1905',
     deathYear: '1985',
+    deathDate: '1985-08-20',
+    lunarDeathDate: '05/07',
     gender: 'female',
   },
   children: [
@@ -34,6 +40,8 @@ export const familyData: FamilyMember = {
       name: 'Cao Văn C',
       birthYear: '1925',
       deathYear: '2000',
+      deathDate: '2000-11-05',
+      lunarDeathDate: '10/10',
       gender: 'male',
       title: 'Trưởng Nam',
       spouse: {
@@ -41,6 +49,8 @@ export const familyData: FamilyMember = {
         name: 'Lê Thị D',
         birthYear: '1930',
         deathYear: '2010',
+        deathDate: '2010-02-14',
+        lunarDeathDate: '01/01',
         gender: 'female',
       },
       children: [
@@ -83,6 +93,8 @@ export const familyData: FamilyMember = {
       name: 'Cao Văn K',
       birthYear: '1930',
       deathYear: '1995',
+      deathDate: '1995-06-12',
+      lunarDeathDate: '15/05',
       gender: 'male',
       children: [
         {
