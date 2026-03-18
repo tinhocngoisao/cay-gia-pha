@@ -47,7 +47,7 @@ export default function Home() {
         >
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-medium text-[#4A3F35] mb-6 leading-tight">
             Cây Gia Phả <br className="md:hidden" />
-            <span className="text-[#8C6D53] italic">Dòng Họ Nguyễn</span>
+            <span className="text-[#8C6D53] italic">Dòng Họ Cao</span>
           </h2>
           <p className="max-w-2xl mx-auto text-[#5A5A40] text-lg md:text-xl leading-relaxed mb-10">
             Lưu giữ truyền thống, kết nối thế hệ. Nơi ghi chép lại cội nguồn và những câu chuyện đáng tự hào của gia tộc.
@@ -69,7 +69,7 @@ export default function Home() {
       <section className="py-12 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto overflow-hidden">
         <div className="bg-[#F4EFE6] rounded-xl shadow-xl border-4 border-[#C89F65] p-4 md:p-8 relative overflow-hidden">
           {/* Background Patterns */}
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.12] text-[#C89F65]">
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.35] mix-blend-multiply">
             <DongSonDrum className="w-[800px] h-[800px] md:w-[1200px] md:h-[1200px] animate-[spin_180s_linear_infinite]" />
           </div>
           

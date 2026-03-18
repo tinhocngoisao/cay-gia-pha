@@ -15,12 +15,12 @@ export interface FamilyMember {
 
 export const familyData: FamilyMember = {
   id: '1',
-  name: 'Nguyễn Văn A',
+  name: 'Cao Văn A',
   birthYear: '1900',
   deathYear: '1980',
   gender: 'male',
   title: 'Thủy Tổ',
-  description: 'Người khai sáng dòng họ Nguyễn tại làng X, xã Y, huyện Z.',
+  description: 'Người khai sáng dòng họ Cao tại làng X, xã Y, huyện Z.',
   spouse: {
     id: '1-s',
     name: 'Trần Thị B',
@@ -31,7 +31,7 @@ export const familyData: FamilyMember = {
   children: [
     {
       id: '2',
-      name: 'Nguyễn Văn C',
+      name: 'Cao Văn C',
       birthYear: '1925',
       deathYear: '2000',
       gender: 'male',
@@ -46,7 +46,7 @@ export const familyData: FamilyMember = {
       children: [
         {
           id: '4',
-          name: 'Nguyễn Văn E',
+          name: 'Cao Văn E',
           birthYear: '1955',
           gender: 'male',
           spouse: {
@@ -58,13 +58,13 @@ export const familyData: FamilyMember = {
           children: [
             {
               id: '7',
-              name: 'Nguyễn Văn G',
+              name: 'Cao Văn G',
               birthYear: '1985',
               gender: 'male',
             },
             {
               id: '8',
-              name: 'Nguyễn Thị H',
+              name: 'Cao Thị H',
               birthYear: '1988',
               gender: 'female',
             }
@@ -72,7 +72,7 @@ export const familyData: FamilyMember = {
         },
         {
           id: '5',
-          name: 'Nguyễn Thị I',
+          name: 'Cao Thị I',
           birthYear: '1960',
           gender: 'female',
         }
@@ -80,20 +80,20 @@ export const familyData: FamilyMember = {
     },
     {
       id: '3',
-      name: 'Nguyễn Văn K',
+      name: 'Cao Văn K',
       birthYear: '1930',
       deathYear: '1995',
       gender: 'male',
       children: [
         {
           id: '6',
-          name: 'Nguyễn Văn L',
+          name: 'Cao Văn L',
           birthYear: '1965',
           gender: 'male',
           children: [
             {
               id: '9',
-              name: 'Nguyễn Văn M',
+              name: 'Cao Văn M',
               birthYear: '1995',
               gender: 'male',
             }
