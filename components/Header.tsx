@@ -22,10 +22,11 @@ export function Header() {
     <header className="sticky top-0 z-40 bg-[#FDFBF7]/95 backdrop-blur-md border-b border-[#E8E3D9] shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3">
-          <div className="p-2 bg-[#8C6D53] text-white rounded-lg shadow-sm">
-            <Users size={20} />
+          <div className="w-10 h-10 rounded-full overflow-hidden shadow-sm border border-[#8C6D53]/20 flex items-center justify-center bg-white">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logo.png" alt="Logo Dòng họ Cao" className="w-full h-full object-cover" />
           </div>
-          <h1 className="font-serif text-xl font-medium tracking-wide text-[#4A3F35]">Gia Phả Dòng Họ</h1>
+          <h1 className="font-serif text-xl font-medium tracking-wide text-[#4A3F35]">Trang thông tin Dòng họ Cao</h1>
         </Link>
         
         {/* Desktop Nav */}
@@ -54,7 +55,7 @@ export function Header() {
             className="md:hidden p-2 text-[#8C6D53] hover:bg-[#8C6D53]/10 rounded-lg transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMobileMenuOpen ? <X size={28} strokeWidth={1.25} /> : <Menu size={28} strokeWidth={1.25} />}
           </button>
         </div>
       </div>

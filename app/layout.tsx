@@ -13,8 +13,11 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Gia Phả Dòng Họ',
+  title: 'Trang thông tin Dòng họ Cao',
   description: 'Lưu giữ và tiếp nối truyền thống gia đình',
+  icons: {
+    icon: '/logo.png',
+  },
 };
 
 export default function RootLayout({children}: {children: React.ReactNode}) {

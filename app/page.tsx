@@ -77,7 +77,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="py-8 text-center text-[#8C6D53]/60 text-sm border-t border-[#E8E3D9] mt-12">
-        <p>© {new Date().getFullYear()} Gia Phả Dòng Họ. Lưu truyền muôn đời.</p>
+        <p>© {new Date().getFullYear()} Trang thông tin Dòng họ Cao. Lưu truyền muôn đời.</p>
       </footer>
 
       {/* Modals */}
