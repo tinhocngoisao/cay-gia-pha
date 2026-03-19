@@ -45,7 +45,7 @@ function TreeNode({ member, onMemberClick, isRoot = false }: TreeNodeProps) {
           {/* Absolute Spouse */}
           {member.spouse && (
             <div className="absolute left-full top-0 flex items-start">
-              <div className="w-8 md:w-12 h-[2px] bg-[#C89F65] mt-[35px] md:mt-[47px] shrink-0"></div>
+              <div className="w-8 md:w-12 h-[1px] bg-[#C89F65] mt-[35px] md:mt-[47px] shrink-0"></div>
               <MemberCard member={member.spouse} onClick={() => onMemberClick(member.spouse!)} isSpouse />
             </div>
           )}
@@ -61,7 +61,7 @@ function TreeNode({ member, onMemberClick, isRoot = false }: TreeNodeProps) {
       {hasChildren && (
         <>
           {/* Vertical line down from parent */}
-          <div className="w-[2px] h-8 bg-[#C89F65]"></div>
+          <div className="w-[1px] h-8 bg-[#C89F65]"></div>
           
           <div className="flex justify-center relative">
             {member.children!.map((child, index) => {
@@ -74,7 +74,7 @@ function TreeNode({ member, onMemberClick, isRoot = false }: TreeNodeProps) {
                   {/* Horizontal line connecting children */}
                   {!isOnly && (
                     <div className={cn(
-                      "absolute top-0 h-[2px] bg-[#C89F65]",
+                      "absolute top-0 h-[1px] bg-[#C89F65]",
                       isFirst ? "left-1/2 right-0" : 
                       isLast ? "left-0 right-1/2" : 
                       "left-0 right-0"
@@ -82,7 +82,7 @@ function TreeNode({ member, onMemberClick, isRoot = false }: TreeNodeProps) {
                   )}
                   
                   {/* Vertical line down to child */}
-                  <div className="absolute top-0 left-1/2 w-[2px] h-8 bg-[#C89F65] -translate-x-1/2"></div>
+                  <div className="absolute top-0 left-1/2 w-[1px] h-8 bg-[#C89F65] -translate-x-1/2"></div>
                   
                   <TreeNode member={child} onMemberClick={onMemberClick} />
                 </div>
@@ -103,6 +103,7 @@ interface MemberCardProps {
 
 function MemberCard({ member, onClick, isSpouse }: MemberCardProps) {
   const isMale = member.gender === 'male';
+  const isAlive = member.isAlive !== false; // Default true if undefined
   
   return (
     <motion.button
@@ -110,24 +111,39 @@ function MemberCard({ member, onClick, isSpouse }: MemberCardProps) {
       whileTap={{ scale: 0.95 }}
       onClick={onClick}
       className={cn(
-        "relative flex flex-col items-center p-3 md:p-4 rounded-2xl shadow-sm border transition-all duration-300 w-32 md:w-40 bg-white group",
-        isMale ? "border-[#8C6D53]/30 hover:border-[#8C6D53] hover:shadow-md" : "border-[#5A5A40]/30 hover:border-[#5A5A40] hover:shadow-md",
+        "relative flex flex-col items-center p-3 md:p-4 rounded-2xl shadow-sm border transition-all duration-300 w-36 md:w-44 group",
+        isAlive 
+          ? "bg-gradient-to-br from-[#FFFDF0] to-[#FDF5D3] border-[#E5C07B] hover:shadow-md" 
+          : "bg-gradient-to-br from-[#F5F5F5] to-[#E0E0E0] border-[#B0B0B0] hover:shadow-md",
         isSpouse && "opacity-90"
       )}
     >
+      {member.generation && !isSpouse && (
+        <div className="absolute -top-3 bg-[#8C6D53] text-white text-[10px] md:text-xs px-2 py-0.5 rounded-full font-[family-name:var(--font-be-vietnam)] shadow-sm z-10">
+          Đời thứ {member.generation}
+        </div>
+      )}
+
       <div className={cn(
-        "w-12 h-12 md:w-16 md:h-16 rounded-full mb-3 flex items-center justify-center text-lg font-serif",
-        isMale ? "bg-[#8C6D53]/10 text-[#8C6D53]" : "bg-[#5A5A40]/10 text-[#5A5A40]"
+        "w-12 h-12 md:w-16 md:h-16 rounded-full mb-2 flex items-center justify-center text-lg font-[family-name:var(--font-playfair)] shadow-inner border",
+        isAlive ? "bg-white/60 border-white/50 text-[#8C6D53]" : "bg-white/40 border-white/30 text-[#666]"
       )}>
         {member.name.charAt(0)}
       </div>
       
       <div className="text-center w-full">
-        <h3 className="font-serif font-medium text-[#4A3F35] text-sm md:text-base leading-tight mb-1 line-clamp-2">
+        {member.title && (
+          <p className="text-[10px] md:text-xs text-[#9B2C2C] font-semibold mb-1 uppercase tracking-wider">
+            {member.title}
+          </p>
+        )}
+        <h3 className="font-[family-name:var(--font-playfair)] font-bold text-[#4A3F35] text-sm md:text-base leading-tight mb-1 line-clamp-2">
           {member.name}
         </h3>
-        <p className="text-[10px] md:text-xs text-[#8C6D53] opacity-80">
-          {member.birthYear ? member.birthYear : '?'} - {member.deathYear ? member.deathYear : 'Nay'}
+        <p className="text-[10px] md:text-xs text-[#666] font-[family-name:var(--font-be-vietnam)]">
+          {member.deathYear 
+            ? `${member.birthYear || '?'} - ${member.deathYear}` 
+            : (isAlive && member.birthYear ? `Sinh năm ${member.birthYear}` : `${member.birthYear || '?'} - ${isAlive ? 'Nay' : '?'}`)}
         </p>
       </div>
 

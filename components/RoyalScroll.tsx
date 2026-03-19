@@ -11,7 +11,7 @@ export const RoyalScroll: React.FC<{ title: string; children: React.ReactNode }>
         
         {/* Background Pattern */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.15] mix-blend-multiply">
-          <DongSonDrum className="w-[600px] h-[600px] md:w-[800px] md:h-[800px] flex-shrink-0 max-w-none animate-[spin_240s_linear_infinite]" />
+          <DongSonDrum className="w-[800px] h-[800px] md:w-[1000px] md:h-[1000px] flex-shrink-0 max-w-none animate-[spin_240s_linear_infinite]" />
         </div>
 
         {/* Corners */}
@@ -22,11 +22,11 @@ export const RoyalScroll: React.FC<{ title: string; children: React.ReactNode }>
 
         <div className="relative z-10 text-center">
           <div className="inline-block mb-6 md:mb-10">
-            <h1 className="font-serif text-2xl md:text-5xl text-[#9B2C2C] font-bold tracking-widest uppercase border-b-2 border-[#9B2C2C] pb-2 md:pb-4 px-4 md:px-8">
+            <h1 className="font-playfair text-2xl md:text-5xl text-[#9B2C2C] font-bold tracking-widest uppercase border-b-2 border-[#9B2C2C] pb-2 md:pb-4 px-4 md:px-8">
               {title}
             </h1>
           </div>
-          <div className="font-serif text-base md:text-xl text-[#4A3F35] leading-loose md:leading-loose text-justify text-justify-last-center space-y-4 md:space-y-6">
+          <div className="font-playfair text-base md:text-xl text-[#4A3F35] leading-loose md:leading-loose text-justify text-justify-last-center space-y-4 md:space-y-6">
             {children}
           </div>
         </div>

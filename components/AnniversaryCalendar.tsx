@@ -143,7 +143,7 @@ export const AnniversaryCalendar: React.FC<AnniversaryCalendarProps> = ({ data, 
   return (
     <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-sm border border-[#E8E3D9] p-4 md:p-6 max-w-5xl mx-auto">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
-        <h3 className="font-serif text-2xl text-[#4A3F35] flex items-center gap-2">
+        <h3 className="font-playfair text-2xl text-[#4A3F35] flex items-center gap-2">
           <CalendarIcon className="text-[#8C6D53]" />
           Lịch Ngày Giỗ
         </h3>
@@ -175,25 +175,6 @@ export const AnniversaryCalendar: React.FC<AnniversaryCalendarProps> = ({ data, 
             )}
             
             <div className="flex items-center">
-              {mode === 'monthly' && (
-                <div className="relative flex items-center hover:bg-white rounded-full transition-colors">
-                  <select
-                    value={selectedMonth}
-                    onChange={(e) => setSelectedMonth(Number(e.target.value))}
-                    className="font-medium text-[#4A3F35] bg-transparent border-none focus:ring-0 text-sm cursor-pointer outline-none appearance-none pl-3 pr-6 py-1.5"
-                  >
-                    {Array.from({ length: 12 }).map((_, i) => (
-                      <option key={i + 1} value={i + 1}>
-                        Tháng {i + 1}
-                      </option>
-                    ))}
-                  </select>
-                  <div className="absolute right-2 pointer-events-none text-[#8C6D53]">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-                  </div>
-                </div>
-              )}
-              
               <div className="relative flex items-center hover:bg-white rounded-full transition-colors">
                 <select
                   value={selectedYear}
@@ -213,6 +194,25 @@ export const AnniversaryCalendar: React.FC<AnniversaryCalendarProps> = ({ data, 
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>
                 </div>
               </div>
+
+              {mode === 'monthly' && (
+                <div className="relative flex items-center hover:bg-white rounded-full transition-colors">
+                  <select
+                    value={selectedMonth}
+                    onChange={(e) => setSelectedMonth(Number(e.target.value))}
+                    className="font-medium text-[#4A3F35] bg-transparent border-none focus:ring-0 text-sm cursor-pointer outline-none appearance-none pl-3 pr-6 py-1.5"
+                  >
+                    {Array.from({ length: 12 }).map((_, i) => (
+                      <option key={i + 1} value={i + 1}>
+                        Tháng {i + 1}
+                      </option>
+                    ))}
+                  </select>
+                  <div className="absolute right-2 pointer-events-none text-[#8C6D53]">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                  </div>
+                </div>
+              )}
             </div>
 
             {mode === 'monthly' && (

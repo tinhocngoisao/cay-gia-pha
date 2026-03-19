@@ -12,14 +12,14 @@ export default function NgayGioPage() {
   const [selectedMember, setSelectedMember] = useState<FamilyMember | null>(null);
 
   return (
-    <main className="min-h-screen bg-[#C8BCA7] text-[#4A3F35] font-sans selection:bg-[#8C6D53]/20">
+    <main className="min-h-screen bg-[#C8BCA7] text-[#4A3F35] selection:bg-[#8C6D53]/20">
       <Header />
       
       <section className="py-6 md:py-12 px-2 sm:px-6 lg:px-8 max-w-[1400px] mx-auto overflow-hidden min-h-[600px]">
         <div className="bg-[#F4EFE6] rounded-xl shadow-xl border border-[#C89F65] p-2 sm:p-4 md:p-8 relative overflow-hidden">
           {/* Background Patterns */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.35] mix-blend-multiply">
-            <DongSonDrum className="w-[800px] h-[800px] md:w-[1200px] md:h-[1200px] flex-shrink-0 max-w-none animate-[spin_180s_linear_infinite]" />
+            <DongSonDrum className="w-[1000px] h-[1000px] md:w-[1400px] md:h-[1400px] flex-shrink-0 max-w-none animate-[spin_180s_linear_infinite]" />
           </div>
           
           {/* Corners */}

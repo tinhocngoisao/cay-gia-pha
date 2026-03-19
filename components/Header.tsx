@@ -24,9 +24,9 @@ export function Header() {
         <Link href="/" className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-full overflow-hidden shadow-sm border border-[#8C6D53]/20 flex items-center justify-center bg-white">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo.png" alt="Logo Dòng họ Cao" className="w-full h-full object-cover" />
+            <img src="/logo.png" alt="Logo Dòng họ Cao" className="w-full h-full object-contain p-1" />
           </div>
-          <h1 className="font-serif text-xl font-medium tracking-wide text-[#4A3F35]">Trang thông tin Dòng họ Cao</h1>
+          <h1 className="font-[family-name:var(--font-playfair)] text-xl font-bold tracking-wide text-[#4A3F35]">Trang thông tin Dòng họ Cao</h1>
         </Link>
         
         {/* Desktop Nav */}
@@ -37,7 +37,7 @@ export function Header() {
               <Link 
                 key={item.path}
                 href={item.path} 
-                className={`font-semibold transition-colors py-5 border-b-2 ${isActive ? 'text-[#9B2C2C] border-[#9B2C2C]' : 'text-[#8C6D53] border-transparent hover:text-[#9B2C2C] hover:border-[#9B2C2C]/30'}`}
+                className={`font-[family-name:var(--font-playfair)] font-semibold transition-colors py-5 border-b-2 ${isActive ? 'text-[#9B2C2C] border-[#9B2C2C]' : 'text-[#8C6D53] border-transparent hover:text-[#9B2C2C] hover:border-[#9B2C2C]/30'}`}
               >
                 {item.label}
               </Link>
@@ -77,7 +77,7 @@ export function Header() {
                     key={item.path}
                     href={item.path} 
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={`font-medium py-3 px-2 rounded-lg transition-colors ${isActive ? 'text-[#9B2C2C] bg-[#9B2C2C]/5' : 'text-[#8C6D53] hover:text-[#9B2C2C] hover:bg-[#8C6D53]/5'}`}
+                    className={`font-[family-name:var(--font-playfair)] font-semibold py-3 px-2 rounded-lg transition-colors ${isActive ? 'text-[#9B2C2C] bg-[#9B2C2C]/5' : 'text-[#8C6D53] hover:text-[#9B2C2C] hover:bg-[#8C6D53]/5'}`}
                   >
                     {item.label}
                   </Link>

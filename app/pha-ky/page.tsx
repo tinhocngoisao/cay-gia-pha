@@ -3,7 +3,7 @@ import { RoyalScroll } from '@/components/RoyalScroll';
 
 export default function PhaKyPage() {
   return (
-    <main className="min-h-screen bg-[#C8BCA7] text-[#4A3F35] font-sans selection:bg-[#8C6D53]/20">
+    <main className="min-h-screen bg-[#C8BCA7] text-[#4A3F35] selection:bg-[#8C6D53]/20">
       <Header />
       <RoyalScroll title="Phả Ký">
         <p>

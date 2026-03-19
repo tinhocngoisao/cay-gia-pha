@@ -3,7 +3,7 @@ import { RoyalScroll } from '@/components/RoyalScroll';
 
 export default function TocUocPage() {
   return (
-    <main className="min-h-screen bg-[#C8BCA7] text-[#4A3F35] font-sans selection:bg-[#8C6D53]/20">
+    <main className="min-h-screen bg-[#C8BCA7] text-[#4A3F35] selection:bg-[#8C6D53]/20">
       <Header />
       <RoyalScroll title="Tộc Ước">
         <p><strong>Điều 1: Hiếu Kính Mẹ Cha</strong><br/>Phàm làm con cháu họ Cao, điều tiên quyết là phải giữ trọn đạo hiếu. Kính trọng ông bà, hiếu thảo với cha mẹ, anh em hòa thuận, nhường nhịn lẫn nhau.</p>

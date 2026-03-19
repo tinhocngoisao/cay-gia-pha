@@ -1,15 +1,22 @@
 import type {Metadata} from 'next';
-import { Lora, Inter } from 'next/font/google';
+import { Playfair_Display, Crimson_Text, Be_Vietnam_Pro } from 'next/font/google';
 import './globals.css';
 
-const lora = Lora({
+const playfair = Playfair_Display({
   subsets: ['vietnamese', 'latin'],
-  variable: '--font-serif',
+  variable: '--font-playfair',
 });
 
-const inter = Inter({
+const crimson = Crimson_Text({
+  weight: ['400', '600', '700'],
   subsets: ['vietnamese', 'latin'],
-  variable: '--font-sans',
+  variable: '--font-crimson',
+});
+
+const beVietnam = Be_Vietnam_Pro({
+  weight: ['300', '400', '500', '600', '700'],
+  subsets: ['vietnamese', 'latin'],
+  variable: '--font-be-vietnam',
 });
 
 export const metadata: Metadata = {
@@ -22,8 +29,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
-    <html lang="vi" className={`${lora.variable} ${inter.variable}`}>
-      <body className="font-sans bg-[#C8BCA7] text-[#4A3F35] antialiased min-h-screen" suppressHydrationWarning>
+    <html lang="vi" className={`${playfair.variable} ${crimson.variable} ${beVietnam.variable}`}>
+      <body className="font-[family-name:var(--font-be-vietnam)] bg-[#C8BCA7] text-[#4A3F35] antialiased min-h-screen" suppressHydrationWarning>
         {children}
       </body>
     </html>
